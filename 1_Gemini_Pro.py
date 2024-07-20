@@ -8,15 +8,15 @@ from utils import SAFETY_SETTTINGS
 
 
 st.set_page_config(
-    page_title="Chat To XYthing",
+    page_title="Chat with PAB",
     page_icon="🔥",
     menu_items={
         'About': "# Make By hiliuxg"
     }
 )
 
-st.title("Chat To XYthing")
-st.caption("a chatbot, powered by google gemini pro.")
+st.title("Chat with PAB")
+st.caption("a chatbot, powered by google gemini 1.5 flash.")
 
 
 if "app_key" not in st.session_state:
@@ -32,7 +32,7 @@ try:
 except AttributeError as e:
     st.warning("Please Put Your Gemini App Key First.")
 
-model = genai.GenerativeModel('gemini-pro')
+model = genai.GenerativeModel('gemini-1.5-flash')
 chat = model.start_chat(history = st.session_state.history)
 
 with st.sidebar:
