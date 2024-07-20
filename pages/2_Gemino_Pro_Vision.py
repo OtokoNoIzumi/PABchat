@@ -6,7 +6,7 @@ import random
 from utils import SAFETY_SETTTINGS
 
 st.set_page_config(
-    page_title="Chat To XYthing",
+    page_title="Chat with PAB",
     page_icon="🔥",
     menu_items={
         'About': "# Make by hiliuxg"
@@ -22,7 +22,7 @@ if "app_key" not in st.session_state:
 
 try:
     genai.configure(api_key = st.session_state.app_key)
-    model = genai.GenerativeModel('gemini-pro-vision')
+    model = genai.GenerativeModel('gemini-1.5-flash')
 except AttributeError as e:
     st.warning("Please Put Your Gemini App Key First.")
 
